@@ -7,7 +7,7 @@ static void afficherImageOctet(string arbo)
 {
     byte[] myfile = File.ReadAllBytes(arbo);
     Console.WriteLine("header");
-    int size_headerinfo = myfile[14];
+    int size_headerinfo = myfile[14]; //hello word
 
     for(int i =0; i < 14; i++)
     {

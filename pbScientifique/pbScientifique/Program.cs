@@ -1,15 +1,30 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-byte[] myfile = File.ReadAllBytes("C://Users//lilia//Documents//PbScientifique//Pour TD1//Pour TD1//pokemon.bmp");
-Console.WriteLine("header");
-int size_headerinfo = myfile[14];
-for (int i = 0; i < myfile.Length; i++)
-{
-    Console.Write(myfile[i] + " ");
-    if (i == 13) { Console.WriteLine("\n\n");
-        Console.WriteLine("Header Info");
-    }
-    if (i == 14 + size_headerinfo) {  Console.WriteLine("\n\n"); }
+using System.Diagnostics;
 
-      
+afficherImageOctet("C://Users//lilia//Documents//PbScientifique//Pour TD1//Pour TD1//pokemon.bmp");
+
+static void afficherImageOctet(string arbo)
+{
+    byte[] myfile = File.ReadAllBytes(arbo);
+    Console.WriteLine("header");
+    int size_headerinfo = myfile[14];
+
+    for(int i =0; i < 14; i++)
+    {
+        Console.Write(myfile[i]+" ");
+    }
+    Console.WriteLine("\nheader info");
+    for (int i =14;i< 14 + size_headerinfo;i++)
+    {
+        Console.Write(myfile[i] + " ");
+    }Console.WriteLine("\n\n\npixel photo :");
+    for (int i = 14 + size_headerinfo;i<myfile.Length;i=i+200)
+    {
+        for (int j=i;j<i+200;j++)
+        {
+            Console.Write(myfile[i] + " ");
+        }
+        Console.WriteLine();
+    }
+    
 }

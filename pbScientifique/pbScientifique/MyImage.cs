@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing;
 
-namespace testBitmap0
+namespace pbScientifique
 {
     internal class MyImage
     {

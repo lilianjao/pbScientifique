@@ -18,13 +18,12 @@ static void afficherImageOctet(string arbo)
     {
         Console.Write(myfile[i] + " ");
     }Console.WriteLine("\n\n\npixel photo :");
-    for (int i = 14 + size_headerinfo;i<myfile.Length;i=i+200)
+    for (int i = 14 + size_headerinfo;i<myfile.Length;i++)
     {
-        for (int j=i;j<i+200;j++)
-        {
             Console.Write(myfile[i] + " ");
-        }
-        Console.WriteLine();
+      
     }
     
 }
+
+
